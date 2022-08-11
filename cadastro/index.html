@@ -52,7 +52,6 @@ src="https://www.facebook.com/tr?id=441307508006888&ev=PageView&noscript=1"
     <div class="mt-lg-1 mt-sm-1"></div>
     <div class="hide-before d-none mt-lg-2 mt-sm-2 px-sm-2 d-block center btn-wrapper">
         <br/>
-        <div class="esconder">
     <img class="hide-before d-none mx-auto d-block" height="42px" src="assets/img/secure.webp" alt="compra segura privacidade protegida">
     <div class="hide-before d-none mt-2"></div>
 </section>       
@@ -741,49 +740,3 @@ src="https://www.facebook.com/tr?id=441307508006888&ev=PageView&noscript=1"
             a.init();
         }(window));
     </script>
-
-    <style>.esconder { display: none }</style>
-
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-/* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
-var SECONDS_TO_DISPLAY = 799;
-var CLASS_TO_DISPLAY = ".esconder";
-
-/* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
-var attempts = 0;
-var elsHiddenList = [];
-var elsDisplayed = false;
-var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
-var alreadyDisplayedKey =`alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
-var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
-
-setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
-
-var showHiddenElements = function () {
-elsDisplayed = true;
-elsHiddenList.forEach((e) => e.style.display = "block");
-localStorage.setItem(alreadyDisplayedKey, true)
-}
-
-var startWatchVideoProgress = function () {
-if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
-if (attempts >= 10) return;
-attempts += 1;
-return setTimeout(function () { startWatchVideoProgress() }, 1000);
-}
-
-smartplayer.instances[0].on('timeupdate', () => {
-if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
-if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
-showHiddenElements();
-})
-}
-
-if (alreadyElsDisplayed === 'true') {
-setTimeout(function () { showHiddenElements(); }, 100);
-} else {
-startWatchVideoProgress()
-}
-});
-</script>
