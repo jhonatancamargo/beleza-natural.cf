@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Meu Vídeo do YouTube</title>
+    <style>
+      .ytp-watermark {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="player"></div>
+
+    <!-- Inclua a API do YouTube -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script>
+      // Coloque o ID do vídeo do YouTube que você deseja exibir
+      var videoID = "NLPShCC0F04";
+
+      // Crie o player de vídeo do YouTube
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+          videoId: videoID,
+          playerVars: {
+            'controls': 0, // Esconde os controles do YouTube
+            'disablekb': 1, // Desabilita o uso do teclado para controlar o vídeo
+            'modestbranding': 1, // Remove o logo do YouTube do player
+            'origin': 'https://beleza-natural.cf/cadastro' // Substitua pelo seu domínio
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+
+      // Função para iniciar o player assim que estiver pronto
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    </script>
+  </body>
+</html>
