@@ -68,9 +68,70 @@
 
         player.addEventListener('ended', () => {
           clearInterval(progressInterval);
-          progressBar.style.width = '100%';
-        });
-      });
+          progressBar.style.widt<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <title>Meu Vídeo do YouTube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/s.css">
+    <style>
+      .progress-container {
+        width: 100%;
+        height: 5px;
+        background-color: #f3f3f3;
+      }
+
+      #progress-bar {
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <title>Meu Vídeo do YouTube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/s.css">
+    <style>
+      #player-wrapper {
+        position: relative;
+      }
+
+      .progress-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #f3f3f3;
+      }
+
+      #progress-bar {
+        width: 0%;
+        height: 5px;
+        background-color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="player-wrapper" style="cursor: pointer">
+      <div id="player"></div>
+      <div class="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+      <button id="mute-button">
+        <div id="mute-overlay">
+          <h2 style="cursor: pointer">Clique aqui Para</h2>
+          <img src="img/sound.png" style="cursor: pointer">
+          <h2 style="cursor: pointer">Ativar som</h2>
+        </div>
+      </button>
+    </div>
+    <div class="button-container">
+      <a href="#" class="button-pulse">Clique aqui para comprar<br>
+      (ultimas vagas)</a>
+    </div>
+    <script src="css/script.js"></script>
+    <script>
+      // Coloque o código JavaScript aqui
     </script>
   </body>
 </html>
+
