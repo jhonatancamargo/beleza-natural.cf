@@ -87,15 +87,16 @@ window.addEventListener('scroll', function() {
     // aplicar o estilo CSS quando a página foi rolada em 10% da altura total
     var playerWrapper = document.getElementById('player-wrapper');
     playerWrapper.style.position = 'fixed';
-    playerWrapper.style.bottom = '0';
-    playerWrapper.style.right = '0';
-    playerWrapper.style.transform = 'scale(0.5)'; // define o tamanho do vídeo para 50%
+    playerWrapper.style.top = '50%'; // define a posição no meio vertical
+    playerWrapper.style.right = '0'; // define a posição na borda direita
+    playerWrapper.style.transform = 'translateY(-100%) scale(0.8)'; // define o tamanho do vídeo para 50% e o move para cima pela metade da altura
   } else {
     // restaurar o estilo CSS original quando a página voltar ao topo
     var playerWrapper = document.getElementById('player-wrapper');
     playerWrapper.style.position = '';
-    playerWrapper.style.bottom = '';
-    playerWrapper.style.right = '';
-    playerWrapper.style.transform = ''; // remove o tamanho definido
+    playerWrapper.style.top = ''; // remove o valor definido
+    playerWrapper.style.right = ''; // remove o valor definido
+    playerWrapper.style.transform = ''; // remove o tamanho e a posição definidos
   }
 });
+
