@@ -32,7 +32,7 @@
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // Coloque o ID do vídeo do YouTube que você deseja exibir
-  var videoID = "NLPShCC0F04";
+  var videoID = "2aogxVYGX_I";
   // Crie o player de vídeo do YouTube
   var player;
 
@@ -68,27 +68,13 @@
       player.seekTo(0);
     });
   }
+// timer.js
+function showBuyButtonWithDelay(delayInMinutes, delayInSeconds) {
+  var totalTimeInMilliseconds = (delayInMinutes * 60000) + (delayInSeconds * 1000);
 
- // Obter o elemento do vídeo
-const video = document.getElementById('player');
+  setTimeout(function() {
+    document.getElementById('buy-button').style.display = 'block';
+  }, totalTimeInMilliseconds);
+}
 
-// Obter o elemento do botão "Compre agora"
-const buyButton = document.querySelector('.button-container');
 
-// Definir o tempo limite para ocultar o botão (15 segundos)
-const hideTime = 15;
-
-// Ocultar o botão no início
-buyButton.style.display = 'none';
-
-// Verificar o tempo do vídeo a cada 500 milissegundos
-setInterval(() => {
-  // Verificar se o tempo atual do vídeo é maior ou igual ao tempo limite
-  if (video.currentTime >= hideTime) {
-    // Mostrar o botão "Comprar agora"
-    buyButton.style.display = 'block';
-  } else {
-    // Ocultar o botão "Comprar agora"
-    buyButton.style.display = 'none';
-  }
-}, 500);
