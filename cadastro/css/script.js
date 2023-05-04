@@ -78,4 +78,24 @@ function showBuyButtonWithDelay(delayInMinutes, delayInSeconds) {
   }, totalTimeInMilliseconds);
 }
 
-
+// detectar quando a página foi rolada em 10% da altura total
+window.addEventListener('scroll', function() {
+  var scrollPosition = window.scrollY;
+  var windowHeight = window.innerHeight;
+  var pageHeight = document.body.offsetHeight;
+  if (scrollPosition > pageHeight * 0.1) {
+    // aplicar o estilo CSS quando a página foi rolada em 10% da altura total
+    var playerWrapper = document.getElementById('player-wrapper');
+    playerWrapper.style.position = 'fixed';
+    playerWrapper.style.bottom = '0';
+    playerWrapper.style.right = '0';
+    playerWrapper.style.transform = 'scale(0.5)'; // define o tamanho do vídeo para 50%
+  } else {
+    // restaurar o estilo CSS original quando a página voltar ao topo
+    var playerWrapper = document.getElementById('player-wrapper');
+    playerWrapper.style.position = '';
+    playerWrapper.style.bottom = '';
+    playerWrapper.style.right = '';
+    playerWrapper.style.transform = ''; // remove o tamanho definido
+  }
+});

@@ -7,6 +7,11 @@ body {
   align-items: center;
   background-color: #fff;
 }
+#player-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+} 
 #player {
   pointer-events: none;
 }
