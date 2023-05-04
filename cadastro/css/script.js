@@ -32,7 +32,7 @@
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // Coloque o ID do vídeo do YouTube que você deseja exibir
-  var videoID = "2aogxVYGX_I";
+  var videoID = "iHSpQQKSMYs";
   // Crie o player de vídeo do YouTube
   var player;
 
@@ -74,6 +74,7 @@ function showBuyButtonWithDelay(delayInMinutes, delayInSeconds) {
 
   setTimeout(function() {
     document.getElementById('buy-button').style.display = 'block';
+    document.getElementById('buy-button2').style.display = 'block';
   }, totalTimeInMilliseconds);
 }
 
