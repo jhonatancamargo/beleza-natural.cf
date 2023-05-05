@@ -100,3 +100,16 @@ window.addEventListener('scroll', function() {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPod|Opera Mini|IEMobile/i)) {
+      const viewport = document.querySelector('meta[name="viewport"]');
+      if (viewport) {
+        viewport.content = "width=1024";
+      } else {
+        const newViewport = document.createElement('meta');
+        newViewport.name = "viewport";
+        newViewport.content = "width=1024";
+        document.head.appendChild(newViewport);
+      }
+    }
+  });
