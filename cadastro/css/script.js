@@ -100,16 +100,23 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Quando o documento estiver carregado, exibir o pop-up
 document.addEventListener("DOMContentLoaded", function() {
-    if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPod|Opera Mini|IEMobile/i)) {
-      const viewport = document.querySelector('meta[name="viewport"]');
-      if (viewport) {
-        viewport.content = "width=1024";
-      } else {
-        const newViewport = document.createElement('meta');
-        newViewport.name = "viewport";
-        newViewport.content = "width=1024";
-        document.head.appendChild(newViewport);
-      }
-    }
-  });
+    const popup = document.getElementById("popup");
+    popup.style.display = "block";
+
+    // Obter o elemento que fecha o pop-up
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    // Fechar o pop-up quando o usuário clicar no botão "X"
+    closeBtn.onclick = function() {
+        popup.style.display = "none";
+    };
+
+    // Fechar o pop-up quando o usuário clicar fora do conteúdo
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    };
+});
