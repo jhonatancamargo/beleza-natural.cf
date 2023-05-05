@@ -113,10 +113,9 @@ document.addEventListener("DOMContentLoaded", function() {
         popup.style.display = "none";
     };
 
-    // Fechar o pop-up quando o usuário clicar fora do conteúdo
-    window.onclick = function(event) {
-        if (event.target == popup) {
-            popup.style.display = "none";
-        }
+    // Fechar o pop-up quando o usuário clicar no conteúdo
+    const popupContent = document.getElementsByClassName("popup-content")[0];
+    popupContent.onclick = function() {
+        popup.style.display = "none";
     };
 });
