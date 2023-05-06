@@ -75,6 +75,7 @@ function showBuyButtonWithDelay(delayInMinutes, delayInSeconds) {
   setTimeout(function() {
     document.getElementById('buy-button').style.display = 'block';
     document.getElementById('buy-button2').style.display = 'block';
+    document.getElementById('wts').style.display = 'block';
   }, totalTimeInMilliseconds);
 }
 
@@ -100,22 +101,10 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Quando o documento estiver carregado, exibir o pop-up
-document.addEventListener("DOMContentLoaded", function() {
-    const popup = document.getElementById("popup");
-    popup.style.display = "block";
+// whatsapp aqui 
 
-    // Obter o elemento que fecha o pop-up
-    const closeBtn = document.getElementsByClassName("close")[0];
-
-    // Fechar o pop-up quando o usuário clicar no botão "X"
-    closeBtn.onclick = function() {
-        popup.style.display = "none";
-    };
-
-    // Fechar o pop-up quando o usuário clicar no conteúdo
-    const popupContent = document.getElementsByClassName("popup-content")[0];
-    popupContent.onclick = function() {
-        popup.style.display = "none";
-    };
-});
+function showMessage(event) {
+  event.preventDefault();
+  var popup = document.getElementById("popup-message");
+  popup.classList.toggle("hidden");
+}
